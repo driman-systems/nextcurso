@@ -1,4 +1,8 @@
+import { cn } from '@/lib/utils'
 import './globals.css'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({weight: ["400", "700"], subsets: ["latin"]})
 
 export default function RootLayout({
   children,
@@ -7,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={(cn(poppins.className), "dark")}>{children}</body>
     </html>
   )
 }
